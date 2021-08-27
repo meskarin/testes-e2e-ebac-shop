@@ -27,6 +27,7 @@ import enderecoFaturamento from './page_objects/alterar-enderecos'
 const novoEndereco = require('../fixtures/novoEndereco.json')
 var faker = require('faker-br')
 
+
 Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#username').type(usuario)
     cy.get('#password').type(senha, {log: false})
@@ -77,5 +78,15 @@ Cypress.Commands.add('checkout', (nome,sobrenome,empresa,pais,endereco,numero,ci
     cy.get('#terms').check()
     cy.get('#place_order').click()
     cy.get('#main').should('contain','Obrigado. Seu pedido foi recebido.')
+
+})
+
+Cypress.Commands.add('precadastro', () => {
+    let email = faker.internet.email()
+    let senha = faker.internet.password()
+
+    cy.get('#reg_email').type(email)
+    cy.get('#reg_password').type(senha)
+    cy.get(':nth-child(4) > .button').click()
 
 })
