@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Rafael",
+        "sobrenome": "Ide",
+        "empresa": "Cooper",
+        "pais": "Brasil",
+        "endereco": "Rua goiania",
+        "numero": "80",
+        "cidade": "Maringá",
+        "estado": "Paraná",
+        "cep": "87023150",
+        "telefone": "44998660027",
+        "email": "rafaelide@outlook.com"
+    },
+{
+        "nome": "Lie",
+        "sobrenome": "Murai",
+        "empresa": "ACEL",
+        "pais": "Brasil",
+        "endereco": "Rua Kakogawa",
+        "numero": "65",
+        "cidade": "Maringá",
+        "estado": "Paraná",
+        "cep": "87023150",
+        "telefone": "4499866532",
+        "email": "lie.murai@outlook.com"
+    },
+{
+        "nome": "gary",
+        "sobrenome": "holt",
+        "empresa": "Slayer",
+        "pais": "Brasil",
+        "endereco": "Rua francisco Sá",
+        "numero": "666",
+        "cidade": "Rio de Janeiro",
+        "estado": "Rio de Janeiro",
+        "cep": "22365998",
+        "telefone": "44998653233",
+        "email": "garyholt.co@cooper.com"
+    }
+]
