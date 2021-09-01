@@ -51,7 +51,7 @@ Cypress.Commands.add('addCarrinho', (produto, tamanho, cor, quantidade) =>{
     cy.get('.button-variable-item-' + cor).click()
     cy.get('.input-text').clear().type(quantidade)
     cy.get('.single_add_to_cart_button').click()     
-    cy.get('.woocommerce-message').should('contain',produto)
+    
 })
 
 Cypress.Commands.add('checkout', (nome,sobrenome,empresa,pais,endereco,numero,cidade,estado,cep,telefone,email) =>{
@@ -77,7 +77,7 @@ Cypress.Commands.add('checkout', (nome,sobrenome,empresa,pais,endereco,numero,ci
     cy.get('#order_comments').type('Teste de pedido completo!')
     cy.get('#terms').check()
     cy.get('#place_order').click()
-    cy.get('#main').should('contain','Obrigado. Seu pedido foi recebido.')
+    
 
 })
 

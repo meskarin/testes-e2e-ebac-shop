@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 const perfil = require('../fixtures/perfil.json')   
+const produto = require('../fixtures/produto.json')
 
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
@@ -29,13 +30,19 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             
         })
         cy.visit('/produtos') 
-        cy.addCarrinho("Abominable Hoodie", "M", "Blue", 2 )
-        cy.addCarrinho("Aero Daily Fitness Tee", "M", "Yellow", 3 )
-        cy.addCarrinho("Apollo Running Short", "33", "Black", 1 )
-        cy.addCarrinho("Ariel Roll Sleeve Sweatshirt", "M", "Purple", 2 )
-        
+        cy.fixture('produto').then(carrinho =>{
+            cy.addCarrinho(carrinho[0].produto, carrinho[0].tamanho, carrinho[0].cor, 2 )
+            cy.get('.woocommerce-message').should('contain',carrinho[0].produto)
+            cy.addCarrinho(carrinho[1].produto, carrinho[1].tamanho, carrinho[1].cor, 1 )
+            cy.get('.woocommerce-message').should('contain',carrinho[1].produto)
+            cy.addCarrinho(carrinho[2].produto, carrinho[2].tamanho, carrinho[2].cor, 2 )
+            cy.get('.woocommerce-message').should('contain',carrinho[2].produto)
+            cy.addCarrinho(carrinho[3].produto, carrinho[3].tamanho, carrinho[3].cor, 1 )
+            cy.get('.woocommerce-message').should('contain',carrinho[3].produto)
+        })
+     
         cy.checkout()
-
+        cy.get('#main').should('contain','Obrigado. Seu pedido foi recebido.')
     })
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta - Novo Usuário', () => {
         cy.visit('/minha-conta')
@@ -43,12 +50,17 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.precadastro()
         
         cy.visit('/produtos') 
-        cy.addCarrinho("Abominable Hoodie", "M", "Blue", 2 )
-        cy.addCarrinho("Aero Daily Fitness Tee", "M", "Yellow", 3 )
-        cy.addCarrinho("Apollo Running Short", "33", "Black", 1 )
-        cy.addCarrinho("Ariel Roll Sleeve Sweatshirt", "M", "Purple", 2 )
-        
+        cy.fixture('produto').then(carrinho =>{
+            cy.addCarrinho(carrinho[0].produto, carrinho[0].tamanho, carrinho[0].cor, 2 )
+            cy.get('.woocommerce-message').should('contain',carrinho[0].produto)
+            cy.addCarrinho(carrinho[1].produto, carrinho[1].tamanho, carrinho[1].cor, 1 )
+            cy.get('.woocommerce-message').should('contain',carrinho[1].produto)
+            cy.addCarrinho(carrinho[2].produto, carrinho[2].tamanho, carrinho[2].cor, 2 )
+            cy.get('.woocommerce-message').should('contain',carrinho[2].produto)
+            cy.addCarrinho(carrinho[3].produto, carrinho[3].tamanho, carrinho[3].cor, 1 )
+            cy.get('.woocommerce-message').should('contain',carrinho[3].produto)
+        })
         cy.checkout()
-
+        cy.get('#main').should('contain','Obrigado. Seu pedido foi recebido.')
     })
 })

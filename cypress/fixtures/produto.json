@@ -1,22 +1,22 @@
 [
 {
     "produto":"Abominable Hoodie",
-    "tamanho":"S",
+    "tamanho":"XL",
     "cor":"Green"
 },
 {
     "produto":"Aero Daily Fitness Tee",
-    "tamanho":"M",
+    "tamanho":"S",
     "cor":"Black"
 },
 {
-    "produto":"Aether Gym Pant",
-    "tamanho":"33",
+    "produto":"Ajax Full-Zip Sweatshirt",
+    "tamanho":"S",
     "cor":"Blue"
 },
 {
-    "produto":"Ajax Full-Zip Sweatshirt",
-    "tamanho":"L",
-    "cor":"Red"
+    "produto":"Atlas Fitness Tank",
+    "tamanho":"XS",
+    "cor":"Blue"
 }
 ]
